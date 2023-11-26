@@ -2,7 +2,8 @@ package Enums;
 
 public enum Sounds {
     SKRIP(" *СКРИП-СКРИП* "),
-    SHELK(" *ЩЕЛК* ");
+    SHELK(" *ЩЕЛК* "),
+    SHURSH(" *ШРХХХ* ");
 
     private Sounds(String sound) {
         this.sound = sound;

@@ -12,8 +12,8 @@ abstract public class LocThrough extends Loc {
     }
     @Override
     public void enter(AlivePerson p){
+        Delay.delayP(p);
         System.out.println(p.getName()+" идет по локации " + this.getNazv());
         p.setLoc(this);
-        Delay.delayP(p);
     }
 }

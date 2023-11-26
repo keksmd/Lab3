@@ -6,7 +6,7 @@ import Utilites.Delay;
 abstract public class Loc {
     private final String nazv;
     private boolean usl = true;
-    public boolean getUsl(){
+    public boolean getUsl(Person p){
         return usl;
     }
     public Loc(String n) {
@@ -25,7 +25,8 @@ abstract public class Loc {
      }
 
      public void enter(AlivePerson p){
-         if(this.getUsl()){
+         if(this.getUsl(p)){
+             Delay.delayP(p);
             System.out.println(p.getName()+" входит в локацию " + this.nazv);
             p.setLoc(this);
             if(this.toString().equals("Locations.Grave")){
@@ -34,7 +35,7 @@ abstract public class Loc {
          }else{
              System.out.println("Невозможно войти в локацию");
          }
-         Delay.delayP(p);
+
 
      }
  }

@@ -7,7 +7,7 @@ import static java.lang.Thread.sleep;
 public class Delay {
     public static void delayP(AlivePerson p) {
         try {
-            sleep(1000 / p.getSpeed().getValue());
+            sleep(2000 / p.getSpeed().getValue());
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
@@ -19,4 +19,5 @@ public class Delay {
             throw new RuntimeException(e);
         }
     }
+
 }

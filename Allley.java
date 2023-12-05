@@ -2,7 +2,6 @@ package Locations;
 
 import Enums.*;
 import Persons.*;
-import Utilites.Delay;
 
 import static Utilites.Randomizer.chance;
 
@@ -25,7 +24,7 @@ public class Allley extends LocThrough {
     }
     @Override
     public boolean getUsl(Person p) {
-        if(p.getLoc().getNazv().equals("тропинка")){
+        if(p.getLoc().getName().equals("тропинка")){
             return super.getUsl(p);
         }else{
             return false;

@@ -2,10 +2,10 @@ package Persons;
 
 import Locations.*;
 import Enums.*;
+import Utilites.Ownable;
 
-abstract public class Person {
+abstract public class Person extends Ownable {
     private int hp;
-    private final String name;
     private final Sex sex;
     private Speed speed;
 
@@ -23,8 +23,8 @@ abstract public class Person {
          this.heartbeats = i;
      }
     public Person(String n,Sex s,int hp,int hb){
+        super(n);
         this.sex = s;
-        this.name = n;
         this.hp = hp;
         Out out = new Out();
         this.loc = out;
@@ -32,8 +32,8 @@ abstract public class Person {
         this.heartbeats = hb;
     }
     public Person(String n,Sex s,int hp,int hb,Loc l){
+        super(n);
         this.sex = s;
-        this.name = n;
         this.hp = hp;
         this.loc = l;
         this.speed = Speed.NORMAL;
@@ -46,13 +46,11 @@ abstract public class Person {
     public Loc getLoc(){
         return this.loc;
     }
+
     @Override
     public String toString(){
         String[] arr = super.toString().split("@");
         return arr[0];
-    }
-    public String getName(){
-        return this.name;
     }
     public Sex getSex(){
         return this.sex;

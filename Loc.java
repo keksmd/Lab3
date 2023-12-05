@@ -2,20 +2,18 @@ package Locations;
 
 import Persons.*;
 import Utilites.Delay;
+import Utilites.Ownable;
 
-abstract public class Loc {
-    private final String nazv;
+abstract public class Loc extends Ownable {
+
     private boolean usl = true;
     public boolean getUsl(Person p){
         return usl;
     }
     public Loc(String n) {
-        nazv = n;
+        super(n);
     }
 
-    public String getNazv() {
-        return nazv;
-    }
 
 
     @Override
@@ -27,7 +25,7 @@ abstract public class Loc {
      public void enter(AlivePerson p){
          if(this.getUsl(p)){
              Delay.delayP(p);
-            System.out.println(p.getName()+" входит в локацию " + this.nazv);
+            System.out.println(p.getName()+" входит в локацию " + this.getName());
             p.setLoc(this);
             if(this.toString().equals("Locations.Grave")){
                 Grave.Gates.close();

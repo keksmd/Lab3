@@ -7,7 +7,5 @@ public class Jude extends AlivePerson {
         super(n,s);
     }
 
-    public void run(){
-        System.out.println(this.toString() + "бежит");
-    }
+
 }

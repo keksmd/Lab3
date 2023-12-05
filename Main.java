@@ -2,6 +2,7 @@ package Main;
 
 
 import Enums.*;
+import Items.*;
 import Locations.*;
 import Persons.*;
 
@@ -31,6 +32,9 @@ public class Main {
             Jude jude = new Jude("Джуд",Sex.MALE);
             GajeD gajed = new GajeD("Гэдж",Sex.MALE,gajes_tomb);
             GraveTrail trail = new GraveTrail();
+            Food apple = new Food(50,ItemSeize.SMALL,"blyadskoe yabloko");
+            Corpse dead_jude = luis.kill(jude);
+            luis.resurrect(dead_jude);
             grave.enter(luis);
             luis.run();
             luis.go_to(trail);
